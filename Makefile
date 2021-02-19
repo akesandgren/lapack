@@ -65,7 +65,7 @@ cblas_testing: cblaslib blaslib
 	$(MAKE) -C CBLAS cblas_testing
 
 .PHONY: lapack_testing
-lapack_testing: tmglib lapacklib blaslib
+lapack_testing: tmglib lapacklib
 	$(MAKE) -C TESTING/LIN cleanexe
 	$(MAKE) -C TESTING
 	./lapack_testing.py
