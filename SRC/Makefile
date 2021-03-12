@@ -526,28 +526,28 @@ DEPRECATED = $(DEPRECSRC)
 endif
 
 .PHONY: all
-all: $(LAPACKLIB)
+all: $(REFLAPACKLIB)
 
-$(LAPACKLIB): $(ALLOBJ) $(ALLXOBJ) $(DEPRECATED)
+$(REFLAPACKLIB): $(ALLOBJ) $(ALLXOBJ) $(DEPRECATED)
 	$(AR) $(ARFLAGS) $@ $^
 	$(RANLIB) $@
 
 .PHONY: single complex double complex16
 single: $(SLASRC) $(DSLASRC) $(SXLASRC) $(SCLAUX) $(ALLAUX)
-	$(AR) $(ARFLAGS) $(LAPACKLIB) $^
-	$(RANLIB) $(LAPACKLIB)
+	$(AR) $(ARFLAGS) $(REFLAPACKLIB) $^
+	$(RANLIB) $(REFLAPACKLIB)
 
 complex: $(CLASRC) $(ZCLASRC) $(CXLASRC) $(SCLAUX) $(ALLAUX)
-	$(AR) $(ARFLAGS) $(LAPACKLIB) $^
-	$(RANLIB) $(LAPACKLIB)
+	$(AR) $(ARFLAGS) $(REFLAPACKLIB) $^
+	$(RANLIB) $(REFLAPACKLIB)
 
 double: $(DLASRC) $(DSLASRC) $(DXLASRC) $(DZLAUX) $(ALLAUX)
-	$(AR) $(ARFLAGS) $(LAPACKLIB) $^
-	$(RANLIB) $(LAPACKLIB)
+	$(AR) $(ARFLAGS) $(REFLAPACKLIB) $^
+	$(RANLIB) $(REFLAPACKLIB)
 
 complex16: $(ZLASRC) $(ZCLASRC) $(ZXLASRC) $(DZLAUX) $(ALLAUX)
-	$(AR) $(ARFLAGS) $(LAPACKLIB) $^
-	$(RANLIB) $(LAPACKLIB)
+	$(AR) $(ARFLAGS) $(REFLAPACKLIB) $^
+	$(RANLIB) $(REFLAPACKLIB)
 
 $(ALLAUX): $(FRC)
 $(SCLAUX): $(FRC)
@@ -573,7 +573,7 @@ clean: cleanobj cleanlib
 cleanobj:
 	rm -f *.o DEPRECATED/*.o
 cleanlib:
-	rm -f $(LAPACKLIB)
+	rm -f $(REFLAPACKLIB)
 
 slaruv.o: slaruv.f ; $(FC) $(FFLAGS_NOOPT) -c -o $@ $<
 dlaruv.o: dlaruv.f ; $(FC) $(FFLAGS_NOOPT) -c -o $@ $<
