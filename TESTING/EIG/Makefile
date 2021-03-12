@@ -127,17 +127,17 @@ complex: xeigtstc
 double: xeigtstd
 complex16: xeigtstz
 
-xeigtsts: $(SEIGTST) $(SCIGTST) $(AEIGTST) $(TMGLIB) $(LAPACKLIB)
-	$(FC) $(FFLAGS) $(LDFLAGS) -o $@ $^ $(BLASLIB)
+xeigtsts: $(SEIGTST) $(SCIGTST) $(AEIGTST) $(TMGLIB)
+	$(FC) $(FFLAGS) $(LDFLAGS) -o $@ $^ $(LAPACKLIB) $(BLASLIB)
 
-xeigtstc: $(CEIGTST) $(SCIGTST) $(AEIGTST) $(TMGLIB) $(LAPACKLIB)
-	$(FC) $(FFLAGS) $(LDFLAGS) -o $@ $^ $(BLASLIB)
+xeigtstc: $(CEIGTST) $(SCIGTST) $(AEIGTST) $(TMGLIB)
+	$(FC) $(FFLAGS) $(LDFLAGS) -o $@ $^ $(LAPACKLIB) $(BLASLIB)
 
-xeigtstd: $(DEIGTST) $(DZIGTST) $(AEIGTST) $(TMGLIB) $(LAPACKLIB)
-	$(FC) $(FFLAGS) $(LDFLAGS) -o $@ $^ $(BLASLIB)
+xeigtstd: $(DEIGTST) $(DZIGTST) $(AEIGTST) $(TMGLIB)
+	$(FC) $(FFLAGS) $(LDFLAGS) -o $@ $^ $(LAPACKLIB) $(BLASLIB)
 
 xeigtstz: $(ZEIGTST) $(DZIGTST) $(AEIGTST) $(TMGLIB) $(LAPACKLIB)
-	$(FC) $(FFLAGS) $(LDFLAGS) -o $@ $^ $(BLASLIB)
+	$(FC) $(FFLAGS) $(LDFLAGS) -o $@ $^ $(LAPACKLIB) $(BLASLIB)
 
 $(AEIGTST): $(FRC)
 $(SCIGTST): $(FRC)

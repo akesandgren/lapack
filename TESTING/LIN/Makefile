@@ -269,35 +269,35 @@ proto-double: xlintstds xlintstrfd
 proto-complex: xlintstrfc
 proto-complex16: xlintstzc xlintstrfz
 
-xlintsts: $(ALINTST) $(SLINTST) $(SCLNTST) $(TMGLIB) $(VARLIB) $(LAPACKLIB) $(XBLASLIB)
-	$(FC) $(FFLAGS) $(LDFLAGS) -o $@ $^ $(BLASLIB)
+xlintsts: $(ALINTST) $(SLINTST) $(SCLNTST) $(TMGLIB) $(VARLIB) $(XBLASLIB)
+	$(FC) $(FFLAGS) $(LDFLAGS) -o $@ $^ $(LAPACKLIB) $(BLASLIB)
 
-xlintstc: $(ALINTST) $(CLINTST) $(SCLNTST) $(TMGLIB) $(VARLIB) $(LAPACKLIB) $(XBLASLIB)
-	$(FC) $(FFLAGS) $(LDFLAGS) -o $@ $^ $(BLASLIB)
+xlintstc: $(ALINTST) $(CLINTST) $(SCLNTST) $(TMGLIB) $(VARLIB) $(XBLASLIB)
+	$(FC) $(FFLAGS) $(LDFLAGS) -o $@ $^ $(LAPACKLIB) $(BLASLIB)
 
-xlintstd: $(ALINTST) $(DLINTST) $(DZLNTST) $(TMGLIB) $(VARLIB) $(LAPACKLIB) $(XBLASLIB)
-	$(FC) $(FFLAGS) $(LDFLAGS) -o $@ $^ $(BLASLIB)
+xlintstd: $(ALINTST) $(DLINTST) $(DZLNTST) $(TMGLIB) $(VARLIB) $(XBLASLIB)
+	$(FC) $(FFLAGS) $(LDFLAGS) -o $@ $^ $(LAPACKLIB) $(BLASLIB)
 
-xlintstz: $(ALINTST) $(ZLINTST) $(DZLNTST) $(TMGLIB) $(VARLIB) $(LAPACKLIB) $(XBLASLIB)
-	$(FC) $(FFLAGS) $(LDFLAGS) -o $@ $^ $(BLASLIB)
+xlintstz: $(ALINTST) $(ZLINTST) $(DZLNTST) $(TMGLIB) $(VARLIB) $(XBLASLIB)
+	$(FC) $(FFLAGS) $(LDFLAGS) -o $@ $^ $(LAPACKLIB) $(BLASLIB)
 
-xlintstds: $(DSLINTST) $(TMGLIB) $(VARLIB) $(LAPACKLIB)
-	$(FC) $(FFLAGS) $(LDFLAGS) -o $@ $^ $(BLASLIB)
+xlintstds: $(DSLINTST) $(TMGLIB) $(VARLIB) 
+	$(FC) $(FFLAGS) $(LDFLAGS) -o $@ $^ $(LAPACKLIB) $(BLASLIB)
 
-xlintstzc: $(ZCLINTST) $(TMGLIB) $(VARLIB) $(LAPACKLIB)
-	$(FC) $(FFLAGS) $(LDFLAGS) -o $@ $^ $(BLASLIB)
+xlintstzc: $(ZCLINTST) $(TMGLIB) $(VARLIB) 
+	$(FC) $(FFLAGS) $(LDFLAGS) -o $@ $^ $(LAPACKLIB) $(BLASLIB)
 
-xlintstrfs: $(SLINTSTRFP) $(TMGLIB) $(VARLIB) $(LAPACKLIB)
-	$(FC) $(FFLAGS) $(LDFLAGS) -o $@ $^ $(BLASLIB)
+xlintstrfs: $(SLINTSTRFP) $(TMGLIB) $(VARLIB) 
+	$(FC) $(FFLAGS) $(LDFLAGS) -o $@ $^ $(LAPACKLIB) $(BLASLIB)
 
-xlintstrfd: $(DLINTSTRFP) $(TMGLIB) $(VARLIB) $(LAPACKLIB)
-	$(FC) $(FFLAGS) $(LDFLAGS) -o $@ $^ $(BLASLIB)
+xlintstrfd: $(DLINTSTRFP) $(TMGLIB) $(VARLIB) 
+	$(FC) $(FFLAGS) $(LDFLAGS) -o $@ $^ $(LAPACKLIB) $(BLASLIB)
 
-xlintstrfc: $(CLINTSTRFP) $(TMGLIB) $(VARLIB) $(LAPACKLIB)
-	$(FC) $(FFLAGS) $(LDFLAGS) -o $@ $^ $(BLASLIB)
+xlintstrfc: $(CLINTSTRFP) $(TMGLIB) $(VARLIB) 
+	$(FC) $(FFLAGS) $(LDFLAGS) -o $@ $^ $(LAPACKLIB) $(BLASLIB)
 
-xlintstrfz: $(ZLINTSTRFP) $(TMGLIB) $(VARLIB) $(LAPACKLIB)
-	$(FC) $(FFLAGS) $(LDFLAGS) -o $@ $^ $(BLASLIB)
+xlintstrfz: $(ZLINTSTRFP) $(TMGLIB) $(VARLIB) 
+	$(FC) $(FFLAGS) $(LDFLAGS) -o $@ $^ $(LAPACKLIB) $(BLASLIB)
 
 $(ALINTST): $(FRC)
 $(SCLNTST): $(FRC)
