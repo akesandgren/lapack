@@ -9,7 +9,7 @@ SHELL = /bin/sh
 #  CC is the C compiler, normally invoked with options CFLAGS.
 #
 CC := gcc
-CFLAGS := -O0 -mieee-fp
+CFLAGS := -O0 -mieee-fp -fno-trapping-math -fno-math-errno -march=native
 
 #  Modify the FC and FFLAGS definitions to the desired compiler
 #  and desired compiler options for your machine.  NOOPT refers to
@@ -20,9 +20,9 @@ CFLAGS := -O0 -mieee-fp
 #  should not compile LAPACK with flags such as -ffpe-trap=overflow.
 #
 FC := gfortran
-FFLAGS := -O0 -frecursive -mieee-fp -std=legacy
-FFLAGS_DRV = -O0 -mieee-fp -std=legacy
-FFLAGS_NOOPT = -O0 -frecursive -mieee-fp -std=legacy
+FFLAGS := -O0 -frecursive -mieee-fp -fno-trapping-math -fno-math-errno -std=legacy -march=native
+FFLAGS_DRV = -O0 -mieee-fp -fno-trapping-math -fno-math-errno -std=legacy -march=native
+FFLAGS_NOOPT = -O0 -frecursive -mieee-fp -fno-trapping-math -fno-math-errno -std=legacy -march=native
 
 #  Define LDFLAGS to the desired linker options for your machine.
 #
