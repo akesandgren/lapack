@@ -65,7 +65,8 @@ cblas_testing: cblaslib blaslib
 	$(MAKE) -C CBLAS cblas_testing
 
 .PHONY: lapack_testing
-lapack_testing: tmglib lapacklib
+lapack_testing: tmglib
+	$(MAKE) -C TESTING/EIG cleanexe
 	$(MAKE) -C TESTING/LIN cleanexe
 	$(MAKE) -C TESTING
 	./lapack_testing.py
